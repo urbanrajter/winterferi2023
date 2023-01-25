@@ -22,11 +22,11 @@ jobs:
         - run: mvn -B package --file pom.xml -DskipTests
           working-directory: /home/runner/work/winterferi2023/measurements/measurements_backend
         - run: mkdir staging && cp target/*.jar staging/measurements_backend.jar
-          working-directory: /home/runner/work/winterferi2023/measurements/measurements_backend
+          working-directory: /home/runner/work/winterferi2023/winterferi2023/measurements/measurements_backend
         - uses: actions/upload-artifact@v1
           with:
             name: measurements_backend_jar
-            path: /home/runner/work/winterferi2023/measurements/measurements_backend/staging
+            path: /home/runner/work/winterferi2023/winterferi2023/measurements/measurements_backend/staging
             
  test:
       name: Run tests
@@ -38,7 +38,7 @@ jobs:
           with:
             java-version: 17
         - name: Run tests
-          working-directory: /home/runner/work/winterferi2023/measurements/measurements_backend
+          working-directory: /home/runner/work/winterferi2023/winterferi2023/measurements/measurements_backend
           run: ./mvnw -B test
         
  docker:
