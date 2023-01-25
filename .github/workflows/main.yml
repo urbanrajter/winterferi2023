@@ -27,3 +27,9 @@ jobs:
           with:
             name: measurements_backend_jar
             path: /home/runner/work/winterferi2023/winterferi2023/measurements/measurements_backend/staging
+        - name: QA - Sonar
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          run: mvn -DskipTests -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=beranic_winter23QA -Dsonar.qualitygate.wait=true
+          working-directory: measurements/measurements_backend
