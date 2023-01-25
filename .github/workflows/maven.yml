@@ -35,6 +35,4 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Build with maven
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+        run: mvn -B package --file pom.xml
