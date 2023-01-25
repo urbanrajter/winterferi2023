@@ -22,7 +22,7 @@ jobs:
       with:
         node-version: 16
         cache: 'npm'
-        cache-dependency-path: /home/runner/work/winterferi23/winterferi23/measurements/measurements_frontend/measurements/package-lock.json
+        cache-dependency-path: /home/runner/work/winterferi2023/winterferi2023/measurements/measurements_frontend/measurements/package-lock.json
 
     - run: npm i
       working-directory: measurements/measurements_frontend/measurements
