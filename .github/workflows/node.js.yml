@@ -25,8 +25,8 @@ jobs:
         cache-dependency-path: /home/runner/work/winterferi2023/winterferi2023/measurements/measurements_frontend/measurements/package-lock.json
 
     - run: npm ci
-      working-directory: measurements/measurements_frontend/measurement
+      working-directory: measurements/measurements_frontend/measurements
     - run: npm run build --if-present
-      working-directory: measurements/measurements_frontend/measurement
+      working-directory: measurements/measurements_frontend/measurements
     - run: npm test
-      working-directory: measurements/measurements_frontend/measurement
+      working-directory: measurements/measurements_frontend/measurements
