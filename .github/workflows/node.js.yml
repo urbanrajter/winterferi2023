@@ -22,14 +22,14 @@ jobs:
       with:
         node-version: 16
         cache: 'npm'
-        cache-dependency-path: /home/runner/work/winter23/winter23/measurements_frontend/measurements/package-lock.json
+        cache-dependency-path: /home/runner/work/winterferi23/winterferi23/measurements/measurements_frontend/measurements/package-lock.json
 
     - run: npm i
-      working-directory: measurements_frontend/measurements
+      working-directory: measurements/measurements_frontend/measurements
     - run: npm run build --if-present
-      working-directory: measurements_frontend/measurements
+      working-directory: measurements/measurements_frontend/measurements
     - run: npm test
-      working-directory: measurements_frontend/measurements
+      working-directory: measurements/measurements_frontend/measurements
     - name: Get current date
       id: date
       run: echo "::set-output name=date::$(date +'%Y-%m-%d-%H:%M')"
@@ -48,13 +48,13 @@ jobs:
         GITHUB_TOKEN: ${{ github.token }}
     - name: zip build
       run: zip -r artifact.zip build
-      working-directory: measurements_frontend/measurements
+      working-directory: measurements/measurements_frontend/measurements
     - name: upload artifact
       uses: actions/upload-release-asset@v1
       env:
         GITHUB_TOKEN: ${{ github.token }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./measurements_frontend/measurements/artifact.zip
+        asset_path: ./measurements/measurements_frontend/measurements/artifact.zip
         asset_name: Frontend-Nightly-${{ steps.date.outputs.date }}.zip
         asset_content_type: application/zip
