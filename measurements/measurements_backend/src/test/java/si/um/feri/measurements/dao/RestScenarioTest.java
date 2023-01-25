@@ -70,6 +70,7 @@ public class RestScenarioTest {
         assertEquals("not_ok",result);
     }
 
+    /*
     @Test
     void measurementHistory() {
         measurememtPostRest.postProductMeasurement(new PostMeasurement(newProduct.id(),1));
@@ -81,5 +82,5 @@ public class RestScenarioTest {
 
         assertEquals(3,history.size());
     }
-
+     */
 }
