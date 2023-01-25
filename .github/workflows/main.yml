@@ -38,7 +38,7 @@ jobs:
           with:
             java-version: 17
         - name: Run tests
-          working-directory: measurements/measurements_backend
+          working-directory: ./measurements/measurements_backend
           run: ./mvnw -B test
         
  docker:
