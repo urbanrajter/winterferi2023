@@ -31,5 +31,5 @@ jobs:
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
             SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          run: mvn -DskipTests -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=beranic_winter23QA -Dsonar.qualitygate.wait=true
+          run: mvn -DskipTests -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=winterferi2023 -Dsonar.qualitygate.wait=true
           working-directory: measurements/measurements_backend
